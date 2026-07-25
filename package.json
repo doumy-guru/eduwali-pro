@@ -2,12 +2,15 @@
   "name": "eduwali-pro",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://doumy-guru.github.io/eduwali-pro",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+     "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist" 
   },
   "dependencies": {
     "firebase": "^12.16.0",
@@ -21,6 +24,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
     "autoprefixer": "^10.5.4",
+    "gh-pages": "^6.3.0",
     "oxlint": "^1.71.0",
     "postcss": "^8.5.23",
     "tailwindcss": "^4.3.3",
