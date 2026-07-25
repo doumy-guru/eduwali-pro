@@ -4,8 +4,13 @@ import { getAuth, signInWithCustomToken, onAuthStateChanged, signOut, signInWith
 import { getFirestore, doc, setDoc, onSnapshot, collection, query, addDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { Users, BookOpen, AlertCircle, CheckCircle, FileSpreadsheet, Plus, Search, ChevronRight, User, Key, LogOut, Send, Download, Trash2, Edit3, ShieldAlert } from 'lucide-react';
 
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
-  apiKey: "mock-key", authDomain: "mock-domain", projectId: "mock-project", storageBucket: "mock-bucket", messagingSenderId: "mock-sender", appId: "mock-app"
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
